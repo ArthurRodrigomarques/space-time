@@ -1,0 +1,67 @@
+/////
+istalação server ts:
+
+// npm init -y = chamar o packager.json para fazer um arquivo js ou ts
+
+// npm i typescript = instalar o typescript
+
+// npm i @types/node = 
+
+// npx tsc =
+
+// npm i tsx = para transformar o typescript em javascript pelo servidor
+
+// npm i fastify = framework do nodejs para facilitar a vida
+
+// npm i eslint -D = serve para padronizar o conteudo
+npm i @rocketseat/eslint-config -D = para usar o padrão rockseat
+para usar tem que colocar no settings.json =     
+"editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+e no package.json = 
+    "lint": "eslint src --ext .ts --fix"  
+para rodar no comando: npm run lint  
+
+
+// npm i prisma -D = {
+    ferramenta de desenvolvimento para facilitar a integração do banco de dados com o backend da aplicação
+    }
+npx prisma init --datasource-provider SQLite = {
+    para vir a pasta "prisma"
+    }
+npx prisma migrate dev = {
+    ler o arquivo prisma e detectar todas alterações no arquivo
+    }
+npx prisma studio = {
+    para rodar no navegador o seu SQL
+    }
+npm i @prisma/client = {
+    acessar o banco de dados no meu servidor/api
+}
+
+npm i zod = para fazer uma validação no {id} do usuario
+
+npm i @fastify/cors: {
+    serve para a segurança e determinar quais urls vao poder acessar nossa api
+}
+
+npm i dotenv -D: {
+    para q ele leia as variaveis de ambiente no .env e converta ela em variaveis no process env
+}
+
+npm i @fastify/multpart{
+    serve para enviar dados do front end para o back end sem ser só por arquivos json
+}
+//////
+
+npm i @fastify/jwt: {
+    serve para 
+}
+findUniqueOrThrow: 
+{
+     encontra a memoria no id e se nao encontrar dispara um erro para q o codigo n continue dali para frente
+}
+
+windows + . = emotes no windows
+
