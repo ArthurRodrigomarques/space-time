@@ -1,5 +1,4 @@
 import 'dotenv/config'
-
 import fastify from 'fastify'
 import cors from '@fastify/cors'
 import jwt from '@fastify/jwt'
@@ -19,7 +18,7 @@ app.register(require('@fastify/static'), {
 })
 
 app.register(cors, {
-  origin: true,
+  origin: true, // todas URLs de frontend poderão acessar o nosso backend e para a produção ex: ['https://localhost:3000', "url do site"]
 })
 
 app.register(jwt, {
@@ -27,8 +26,8 @@ app.register(jwt, {
 })
 
 app.register(authRoutes)
-app.register(uploadRoutes)
 app.register(memoriesRoutes)
+app.register(uploadRoutes)
 
 app
   .listen({
@@ -36,5 +35,5 @@ app
     host: '0.0.0.0',
   })
   .then(() => {
-    console.log('🚀 HTTP server running on port http://localhost:3333')
+    console.log('https server running on http://localhost:3333')
   })

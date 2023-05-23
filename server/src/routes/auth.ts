@@ -8,11 +8,10 @@ export async function authRoutes(app: FastifyInstance) {
     const bodySchema = z.object({
       code: z.string(),
     })
-
     const { code } = bodySchema.parse(request.body)
 
     const accessTokenResponse = await axios.post(
-      'https://github.com/login/oauth/access_token',
+      'https:/github.com/login/oauth/access_token',
       null,
       {
         params: {
@@ -25,7 +24,6 @@ export async function authRoutes(app: FastifyInstance) {
         },
       },
     )
-
     const { access_token } = accessTokenResponse.data
 
     const userResponse = await axios.get('https://api.github.com/user', {
@@ -33,7 +31,6 @@ export async function authRoutes(app: FastifyInstance) {
         Authorization: `Bearer ${access_token}`,
       },
     })
-
     const userSchema = z.object({
       id: z.number(),
       login: z.string(),
@@ -59,7 +56,6 @@ export async function authRoutes(app: FastifyInstance) {
         },
       })
     }
-
     const token = app.jwt.sign(
       {
         name: user.name,
@@ -70,7 +66,6 @@ export async function authRoutes(app: FastifyInstance) {
         expiresIn: '30 days',
       },
     )
-
     return {
       token,
     }
